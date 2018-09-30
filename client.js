@@ -142,10 +142,14 @@ if(showtime){
   timedisplay.innerHTML=showtime.d+" Días "+showtime.h+" Horas "+showtime.m+" Minutos "+showtime.s+" Segundos ";
   var numb = getPercent(zerotime.getTime(),flashtime.getTime(),now.getTime())*100
   //numb = numb.toFixed(2);
-  numb = (numb+"").substring(0,2);
-  numb+="%"
+  var temp = "";
+  temp = (numb+"").substring(0,1);
+  temp+=",";
+  temp+=(numb+"").substring(2,4)
+
+  temp+="%"
   
-  percentage.innerHTML=numb
+  percentage.innerHTML=temp
   
 }else{
    return
@@ -157,3 +161,7 @@ setInterval(function(){
   drawBar(getPercent(zerotime.getTime(),flashtime.getTime(),new Date().getTime()));
   
 },30000);
+
+
+
+
