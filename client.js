@@ -140,8 +140,10 @@ function main(){
 if(showtime){
    
   timedisplay.innerHTML=showtime.d+" Días "+showtime.h+" Horas "+showtime.m+" Minutos "+showtime.s+" Segundos ";
-  var numb = getPercent(zerotime.getTime(),flashtime.getTime(),now.getTime())
-  numb = numb.toFixed(2);
+  var numb = getPercent(zerotime.getTime(),flashtime.getTime(),now.getTime())*100
+  //numb = numb.toFixed(2);
+  numb = (numb+"").substring(0,2);
+  numb = Number(numb);
   numb+="%"
   
   percentage.innerHTML=numb
