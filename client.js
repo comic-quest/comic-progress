@@ -143,7 +143,6 @@ if(showtime){
   var numb = getPercent(zerotime.getTime(),flashtime.getTime(),now.getTime())*100
   //numb = numb.toFixed(2);
   numb = (numb+"").substring(0,2);
-  numb = Number(numb);
   numb+="%"
   
   percentage.innerHTML=numb
