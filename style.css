@@ -1,0 +1,58 @@
+#container{
+
+  width:600px;
+    height:400px;
+  
+    position:relative;
+}
+
+body{
+  background-color:transparent;
+  margin:0px;
+}
+
+#canvas{
+position:absolute;
+  left:75px;
+  top:150px;
+}
+
+
+
+@font-face{
+font-family: typostuck;
+    src: url(https://cdn.glitch.com/71dba752-e332-4c85-8864-1ca64830a49a%2Ftypostuck.ttf?1538302689542);
+
+}
+
+#timedisplay{
+font-size:30px;
+position:absolute;
+    width:100%;
+    bottom:0;
+    text-align:center;
+  
+}
+
+#percentage{
+font-size:50px;
+position:absolute;
+    width:100%;
+    bottom:50px;
+    text-align:center;
+  
+}
+
+#endofact{
+
+
+
+  
+
+position:absolute;
+   
+    top:15px;
+  left:25px;
+    text-align:center;
+  
+}
