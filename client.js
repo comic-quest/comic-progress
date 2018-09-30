@@ -6,6 +6,10 @@
   window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+window.cancelAnimationFrame = window.cancelAnimationFrame ||
+        window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame ||
+        window.msCancelAnimationFrame;
+
 
 var lastsecond;
 
@@ -19,7 +23,7 @@ flashtime.setUTCHours(21,0,0,0);
 console.log(flashtime.toString())
 
 var time = new Date()
-
+var reqanim;
 
 
 var zerotime=new Date();
@@ -130,11 +134,16 @@ function getTime(millisecs){
 
  
 
-requestAnimationFrame(main);
+reqanim = requestAnimationFrame(main);
 
 function main(){
-  requestAnimationFrame(main)
+  reqanim = requestAnimationFrame(main)
   var now = new Date()
+
+  if((flashtime.getTime()-now.getTime())>=0){
+     
+     
+     
   
   var showtime = getTime(flashtime.getTime()-now.getTime())
 if(showtime){
@@ -154,6 +163,17 @@ if(showtime){
 }else{
    return
    }
+   
+    
+}else{
+    
+     cancelAnimationFrame(reqanim)
+      percentage.innerHTML="100%"
+      timedisplay.innerHTML="El flash está listo."
+    drawBar(1);
+    
+}
+    
 }
 
 setInterval(function(){
