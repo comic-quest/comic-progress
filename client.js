@@ -154,7 +154,18 @@ if(showtime){
   var temp = "";
   temp = (numb+"").substring(0,1);
   temp+=",";
-  temp+=(numb+"").substring(2,4)
+    if(Number(numb[2])||numb[2]===0){
+       
+        temp+=numb[2]
+       
+       }
+    
+     if(Number(numb[3])||numb[3]===0){
+       
+        temp+=numb[3]
+       
+       }
+       
 
   temp+="%"
   
