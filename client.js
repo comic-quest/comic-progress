@@ -152,9 +152,10 @@ if(showtime){
   var numb = getPercent(zerotime.getTime(),flashtime.getTime(),now.getTime())*100
   //numb = numb.toFixed(2);
   var temp = "";
-  temp = (numb+"").substring(0,1);
+  var str = (numb+"").split(".");
+  temp+=str[0];
   temp+=",";
-    temp+=((numb+"").split(".")[1]).substring(0,2);
+    temp+=str[1].substring(0,2)
        
 
   temp+="%"
