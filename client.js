@@ -154,7 +154,7 @@ if(showtime){
   var temp = "";
   temp = (numb+"").substring(0,1);
   temp+=",";
-    temp+=(numb.split(".")[1]).substring(0,2);
+    temp+=((numb+"").split(".")[1]).substring(0,2);
        
 
   temp+="%"
