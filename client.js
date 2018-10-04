@@ -54,6 +54,12 @@ canvas.height=75;
 var ctx = canvas.getContext("2d");
 
 
+  var socket = io('https://comic-progress2.glitch.me/');
+  socket.on('yeet', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+
 
 
 
@@ -152,10 +158,13 @@ if(showtime){
   var numb = getPercent(zerotime.getTime(),flashtime.getTime(),now.getTime())*100
   //numb = numb.toFixed(2);
   var temp = "";
-  var str = (numb+"").split(".");
-  temp+=str[0];
-  temp+=",";
-    temp+=str[1].substring(0,2)
+  var arr = (numb+"").split(".");
+    temp+=str[0]
+    if(arr.length>1){
+       temp+=",";
+    temp+=arr[1].substring(0,2)
+       }
+  
        
 
   temp+="%"
