@@ -159,7 +159,7 @@ if(showtime){
   //numb = numb.toFixed(2);
   var temp = "";
   var arr = (numb+"").split(".");
-    temp+=str[0]
+    temp+=arr[0]
     if(arr.length>1){
        temp+=",";
     temp+=arr[1].substring(0,2)
